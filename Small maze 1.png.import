@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djavex2eqvek1"
-path="res://.godot/imported/Circle slot.png-57b2f48402ad3038412dffd0c6b6ac88.ctex"
+uid="uid://di3iwhhfiycup"
+path="res://.godot/imported/Small maze 1.png-99fe59255a68eddad662ecf1c8d35ded.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Circle slot.png"
-dest_files=["res://.godot/imported/Circle slot.png-57b2f48402ad3038412dffd0c6b6ac88.ctex"]
+source_file="res://Small maze 1.png"
+dest_files=["res://.godot/imported/Small maze 1.png-99fe59255a68eddad662ecf1c8d35ded.ctex"]
 
 [params]
 

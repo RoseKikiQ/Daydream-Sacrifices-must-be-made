@@ -1,21 +1,21 @@
-[gd_scene load_steps=15 format=3 uid="uid://ca6vqw6dvlox6"]
+[gd_scene load_steps=15 format=3 uid="uid://1dy2bpgt72rr"]
 
-[ext_resource type="Script" uid="uid://cfl40oom7c43f" path="res://triangle.gd" id="1_cm0pq"]
-[ext_resource type="Texture2D" uid="uid://cbtcl2kqc70q7" path="res://Base.png" id="1_fos0i"]
-[ext_resource type="Texture2D" uid="uid://dja6woqedumne" path="res://无标题.png" id="2_fos0i"]
-[ext_resource type="Texture2D" uid="uid://dkskk10gfwwb2" path="res://Square.png" id="3_3dxm6"]
-[ext_resource type="Script" uid="uid://ciequ7bsx0cdv" path="res://circle.gd" id="3_wkp8b"]
-[ext_resource type="Texture2D" uid="uid://dmmci8sqbl8gy" path="res://Circle.png" id="4_lgr22"]
-[ext_resource type="Script" uid="uid://dbudo70m6uhi8" path="res://Trianglekey.gd" id="7_03owx"]
-[ext_resource type="Texture2D" uid="uid://um74kfdm76pw" path="res://Triangle Key.png" id="7_lgr22"]
-[ext_resource type="Texture2D" uid="uid://dynmw7w08dejk" path="res://A door.png" id="7_trn2v"]
-[ext_resource type="Script" uid="uid://ce5me2kksb6ph" path="res://door.gd" id="8_03owx"]
+[ext_resource type="Texture2D" uid="uid://cbtcl2kqc70q7" path="res://Base.png" id="1_u5lf4"]
+[ext_resource type="Texture2D" uid="uid://dkskk10gfwwb2" path="res://Square.png" id="2_7swbh"]
+[ext_resource type="Script" uid="uid://ciequ7bsx0cdv" path="res://circle.gd" id="3_7swbh"]
+[ext_resource type="Texture2D" uid="uid://dmmci8sqbl8gy" path="res://Circle.png" id="3_ewulq"]
+[ext_resource type="Script" uid="uid://cfl40oom7c43f" path="res://triangle.gd" id="4_6vscs"]
+[ext_resource type="Texture2D" uid="uid://dja6woqedumne" path="res://无标题.png" id="5_otr1s"]
+[ext_resource type="Script" uid="uid://dbudo70m6uhi8" path="res://Trianglekey.gd" id="6_bptnd"]
+[ext_resource type="Texture2D" uid="uid://um74kfdm76pw" path="res://Triangle Key.png" id="7_gp5y5"]
+[ext_resource type="Script" uid="uid://ce5me2kksb6ph" path="res://door.gd" id="8_kah4x"]
+[ext_resource type="Texture2D" uid="uid://dynmw7w08dejk" path="res://A door.png" id="9_8jspn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wkp8b"]
 radius = 37.107952
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03owx"]
-size = Vector2(65, 62)
+size = Vector2(76, 66)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wkp8b"]
 radius = 15.0
@@ -29,7 +29,7 @@ size = Vector2(1310.625, 434.28363)
 [node name="Base" type="Sprite2D" parent="."]
 position = Vector2(574, 322.00003)
 scale = Vector2(1.1797034, 1.2104521)
-texture = ExtResource("1_fos0i")
+texture = ExtResource("1_u5lf4")
 
 [node name="Square" type="CharacterBody2D" parent="."]
 visible = false
@@ -39,30 +39,30 @@ metadata/_edit_group_ = true
 [node name="Icon" type="Sprite2D" parent="Square"]
 visible = false
 scale = Vector2(0.58445925, 0.60570467)
-texture = ExtResource("3_3dxm6")
+texture = ExtResource("2_7swbh")
 
 [node name="Circle" type="CharacterBody2D" parent="."]
-position = Vector2(195, 296)
-script = ExtResource("3_wkp8b")
+position = Vector2(194, 302)
+script = ExtResource("3_7swbh")
 metadata/_edit_group_ = true
 
 [node name="Icon" type="Sprite2D" parent="Circle"]
 position = Vector2(1, -3.8146973e-06)
 scale = Vector2(0.7146018, 0.7698019)
-texture = ExtResource("4_lgr22")
+texture = ExtResource("3_ewulq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Circle"]
 visible = false
 shape = SubResource("CircleShape2D_wkp8b")
 
 [node name="Triangle" type="CharacterBody2D" parent="."]
-position = Vector2(303, 300)
-script = ExtResource("1_cm0pq")
+position = Vector2(304, 255)
+script = ExtResource("4_6vscs")
 metadata/_edit_group_ = true
 
 [node name="Icon" type="Sprite2D" parent="Triangle"]
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_fos0i")
+texture = ExtResource("5_otr1s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triangle"]
 position = Vector2(-1.5, -2)
@@ -70,7 +70,7 @@ shape = SubResource("RectangleShape2D_03owx")
 
 [node name="trianglekey" type="Area2D" parent="."]
 position = Vector2(635, 279)
-script = ExtResource("7_03owx")
+script = ExtResource("6_bptnd")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trianglekey"]
@@ -78,21 +78,20 @@ position = Vector2(2, 1)
 shape = SubResource("CapsuleShape2D_wkp8b")
 
 [node name="TriangleKey" type="Sprite2D" parent="trianglekey"]
-texture = ExtResource("7_lgr22")
+texture = ExtResource("7_gp5y5")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(1127, 285)
+position = Vector2(500, 37)
 scale = Vector2(0.014169097, 0.29874775)
-script = ExtResource("8_03owx")
+script = ExtResource("8_kah4x")
 metadata/_edit_group_ = true
 
 [node name="ADoor" type="Sprite2D" parent="Area2D"]
-position = Vector2(423.45654, 68.619736)
-scale = Vector2(1, 0.7724551)
-texture = ExtResource("7_trn2v")
+position = Vector2(44815.844, 933.89825)
+texture = ExtResource("9_8jspn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(141.14844, 68.61969)
+position = Vector2(44533.54, 932.2247)
 shape = SubResource("RectangleShape2D_wkp8b")
 
 [connection signal="body_entered" from="trianglekey" to="trianglekey" method="_on_body_entered"]
