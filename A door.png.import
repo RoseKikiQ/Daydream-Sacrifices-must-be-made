@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djavex2eqvek1"
-path="res://.godot/imported/Circle slot.png-57b2f48402ad3038412dffd0c6b6ac88.ctex"
+uid="uid://dynmw7w08dejk"
+path="res://.godot/imported/A door.png-4a5714e46a0a82f9ace07a0f0cfc7b5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Circle slot.png"
-dest_files=["res://.godot/imported/Circle slot.png-57b2f48402ad3038412dffd0c6b6ac88.ctex"]
+source_file="res://A door.png"
+dest_files=["res://.godot/imported/A door.png-4a5714e46a0a82f9ace07a0f0cfc7b5a.ctex"]
 
 [params]
 
