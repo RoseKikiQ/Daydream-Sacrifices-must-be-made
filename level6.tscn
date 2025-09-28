@@ -1,5 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cpd1f0ysx3hbr"]
 
+[ext_resource type="Texture2D" uid="uid://djsnfc6obvk1d" path="res://坏结局.webp" id="1_wxivg"]
 [ext_resource type="Texture2D" uid="uid://dkskk10gfwwb2" path="res://Square.png" id="2_7touu"]
 [ext_resource type="Script" uid="uid://cfl40oom7c43f" path="res://triangle.gd" id="5_nqqpn"]
 [ext_resource type="Texture2D" uid="uid://cujjl6qq0ut0t" path="res://triangle.png" id="6_sopw3"]
@@ -7,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://um74kfdm76pw" path="res://Triangle Key.png" id="8_q4xlh"]
 [ext_resource type="Script" uid="uid://ce5me2kksb6ph" path="res://door.gd" id="9_7vy8b"]
 [ext_resource type="Texture2D" uid="uid://dynmw7w08dejk" path="res://A door.png" id="10_k7thq"]
-[ext_resource type="Texture2D" uid="uid://dvxyuabso80nk" path="res://The End Logo.png" id="11_7touu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wkp8b"]
 radius = 15.0
@@ -18,10 +18,10 @@ size = Vector2(867.03906, 401.67664)
 
 [node name="Node" type="Node"]
 
-[node name="TheEndLogo" type="Sprite2D" parent="."]
-position = Vector2(577.50006, 324.5)
-scale = Vector2(4.294777, 4.371621)
-texture = ExtResource("11_7touu")
+[node name="坏结局" type="Sprite2D" parent="."]
+position = Vector2(571, 349.75)
+scale = Vector2(0.7686667, 0.8382701)
+texture = ExtResource("1_wxivg")
 
 [node name="Square" type="CharacterBody2D" parent="."]
 visible = false
@@ -34,7 +34,7 @@ scale = Vector2(0.58445925, 0.60570467)
 texture = ExtResource("2_7touu")
 
 [node name="Triangle" type="CharacterBody2D" parent="."]
-position = Vector2(307, 321)
+position = Vector2(414, 159)
 collision_layer = 2
 script = ExtResource("5_nqqpn")
 metadata/_edit_group_ = true
@@ -47,7 +47,7 @@ texture = ExtResource("6_sopw3")
 polygon = PackedVector2Array(1, -34, -34, 26, 38, 27)
 
 [node name="trianglekey" type="Area2D" parent="."]
-position = Vector2(615, 320)
+position = Vector2(369, 439)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("7_ie2gf")

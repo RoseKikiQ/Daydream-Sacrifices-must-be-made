@@ -42,15 +42,15 @@ func _physics_process(delta: float) -> void:
 		position.x = 1100
 		
 	if pushing:
-		position.x += 128*delta
+		position.x += 400*delta
 	if falling:
-		position.y += 512*delta
+		position.y += 612*delta
 	
 
 func _on_area_body_entered(body: Node2D) -> void:
 	if triggered:
 		pushing = true
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.25).timeout
 		falling = true
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(2.25).timeout
 		get_tree().change_scene_to_file("res://level6.tscn")
