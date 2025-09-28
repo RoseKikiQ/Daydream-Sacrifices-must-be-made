@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=3 uid="uid://1dy2bpgt72rr"]
 
-[ext_resource type="Texture2D" uid="uid://cbtcl2kqc70q7" path="res://Base.png" id="1_u5lf4"]
+[ext_resource type="Texture2D" uid="uid://c66gf4mib4ki6" path="res://Tiles template.png" id="1_ewulq"]
 [ext_resource type="Texture2D" uid="uid://dkskk10gfwwb2" path="res://Square.png" id="2_7swbh"]
 [ext_resource type="Script" uid="uid://ciequ7bsx0cdv" path="res://circle.gd" id="3_7swbh"]
 [ext_resource type="Texture2D" uid="uid://dmmci8sqbl8gy" path="res://Circle.png" id="3_ewulq"]
 [ext_resource type="Script" uid="uid://cfl40oom7c43f" path="res://triangle.gd" id="4_6vscs"]
-[ext_resource type="Texture2D" uid="uid://dja6woqedumne" path="res://无标题.png" id="5_otr1s"]
+[ext_resource type="Texture2D" uid="uid://cujjl6qq0ut0t" path="res://triangle.png" id="5_otr1s"]
 [ext_resource type="Script" uid="uid://dbudo70m6uhi8" path="res://Trianglekey.gd" id="6_bptnd"]
 [ext_resource type="Texture2D" uid="uid://um74kfdm76pw" path="res://Triangle Key.png" id="7_gp5y5"]
 [ext_resource type="Script" uid="uid://ce5me2kksb6ph" path="res://door.gd" id="8_kah4x"]
@@ -24,10 +24,10 @@ height = 72.0
 
 [node name="Node" type="Node"]
 
-[node name="Base" type="Sprite2D" parent="."]
-position = Vector2(574, 322.00003)
-scale = Vector2(1.1797034, 1.2104521)
-texture = ExtResource("1_u5lf4")
+[node name="TilesTemplate" type="Sprite2D" parent="."]
+position = Vector2(575.5, 323.49997)
+scale = Vector2(1.1808839, 1.3284823)
+texture = ExtResource("1_ewulq")
 
 [node name="Square" type="CharacterBody2D" parent="."]
 visible = false

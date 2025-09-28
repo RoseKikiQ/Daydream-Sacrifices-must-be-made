@@ -19,3 +19,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		$Circle.moving_randomly = false
 		$Circle.modulate = Color.RED
 		killed = true
+		$Circle.Body_collected = true
+		$Circleslot/CircleSlot.killed = true

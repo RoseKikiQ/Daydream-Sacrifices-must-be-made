@@ -12,8 +12,10 @@ func _on_body_entered(body: Node2D) -> void:
 				get_tree().change_scene_to_file("res://Level3.tscn")
 			elif level == 2:
 				get_tree().change_scene_to_file("res://Level4.tscn")
-	if body.Body_in_slot == true:
-		if level == 3:
-			get_tree(). change_scene_to_file("res://level5.tscn")
+			elif level == 3:
+				get_tree(). change_scene_to_file("res://level5.tscn")
+			elif level == 5:
+				get_tree().quit()
 		else:
 			print("not has key")
+	   

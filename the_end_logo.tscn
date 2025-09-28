@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ueg7hsxrc1ct"]
+
+[ext_resource type="Texture2D" uid="uid://dvxyuabso80nk" path="res://The End Logo.png" id="1_oms7k"]
+
+[node name="TheEndLogo" type="Sprite2D"]
+position = Vector2(577.49994, 323)
+scale = Vector2(4.2947764, 4.3513513)
+texture = ExtResource("1_oms7k")

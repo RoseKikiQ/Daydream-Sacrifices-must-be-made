@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://ca6vqw6dvlox6"]
+[gd_scene load_steps=15 format=3 uid="uid://ca6vqw6dvlox6"]
 
+[ext_resource type="Script" uid="uid://cbi1qc6s5lbbw" path="res://main.gd" id="1_20pc6"]
 [ext_resource type="Script" uid="uid://cfl40oom7c43f" path="res://triangle.gd" id="1_cm0pq"]
-[ext_resource type="Texture2D" uid="uid://cbtcl2kqc70q7" path="res://Base.png" id="1_fos0i"]
-[ext_resource type="Texture2D" uid="uid://dja6woqedumne" path="res://无标题.png" id="2_fos0i"]
+[ext_resource type="Texture2D" uid="uid://c66gf4mib4ki6" path="res://Tiles template.png" id="2_20pc6"]
+[ext_resource type="Texture2D" uid="uid://cujjl6qq0ut0t" path="res://triangle.png" id="2_fos0i"]
 [ext_resource type="Texture2D" uid="uid://dkskk10gfwwb2" path="res://Square.png" id="3_3dxm6"]
 [ext_resource type="Script" uid="uid://ciequ7bsx0cdv" path="res://circle.gd" id="3_wkp8b"]
 [ext_resource type="Texture2D" uid="uid://dmmci8sqbl8gy" path="res://Circle.png" id="4_lgr22"]
@@ -22,11 +23,12 @@ height = 72.0
 size = Vector2(867.03906, 401.67664)
 
 [node name="Node" type="Node"]
+script = ExtResource("1_20pc6")
 
-[node name="Base" type="Sprite2D" parent="."]
-position = Vector2(574, 322.00003)
-scale = Vector2(1.1797034, 1.2104521)
-texture = ExtResource("1_fos0i")
+[node name="TilesTemplate" type="Sprite2D" parent="."]
+position = Vector2(578.5, 322.99997)
+scale = Vector2(1.1829393, 1.3513514)
+texture = ExtResource("2_20pc6")
 
 [node name="Square" type="CharacterBody2D" parent="."]
 visible = false

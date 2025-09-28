@@ -3,10 +3,12 @@ const b = 50
 @onready var triangle: CharacterBody2D = $"../Triangle"
 var Body_in_slot = false
 var moving_randomly = false
-
+var is_in_slot
+var Body_collected = false
 
 func _physics_process(delta: float) -> void:
-	if not moving_randomly:
+	Body_collected = triangle.Body_collected
+	if not moving_randomly and not is_in_slot:
 		var vec_to_triangle = position - triangle.position
 		print(vec_to_triangle)
 		vec_to_triangle = vec_to_triangle.normalized()
@@ -25,6 +27,9 @@ func _physics_process(delta: float) -> void:
 		position.x = 1100
 		velocity.x = -abs(velocity.x)
 	
+	if is_in_slot:
+		velocity = Vector2(0,0)
+	
 	move_and_slide()
 
 func pick_random_direction():
@@ -37,4 +42,8 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name=="Triangle":
 		body.body_collected = true
 	if body.Body_in_slot == true:
-			velocity = Vector2.ZERO
+		velocity = Vector2.ZERO
+
+func in_slot():
+	triangle.Key_collected = true
+	is_in_slot = true

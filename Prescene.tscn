@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cb2f7lwp0c1jx"]
+[gd_scene load_steps=9 format=3 uid="uid://cb2f7lwp0c1jx"]
 
 [ext_resource type="Texture2D" uid="uid://b1l1uo6shj2m7" path="res://Collecting berries baseplate.png" id="1_26blo"]
 [ext_resource type="Texture2D" uid="uid://dkskk10gfwwb2" path="res://Square.png" id="2_3wqal"]
+[ext_resource type="Script" uid="uid://d1r3y6ewn143u" path="res://prescene.gd" id="2_f344s"]
 [ext_resource type="Script" uid="uid://ciequ7bsx0cdv" path="res://circle.gd" id="3_f344s"]
 [ext_resource type="Texture2D" uid="uid://dmmci8sqbl8gy" path="res://Circle.png" id="4_xregy"]
 [ext_resource type="Script" uid="uid://cfl40oom7c43f" path="res://triangle.gd" id="5_jcs32"]
-[ext_resource type="Texture2D" uid="uid://dja6woqedumne" path="res://无标题.png" id="6_j12vc"]
+[ext_resource type="Texture2D" uid="uid://cujjl6qq0ut0t" path="res://triangle.png" id="6_j12vc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wkp8b"]
 radius = 37.107952
@@ -13,9 +14,17 @@ radius = 37.107952
 [node name="Node" type="Node"]
 
 [node name="CollectingBerriesBaseplate" type="Sprite2D" parent="."]
-position = Vector2(575, 324)
+position = Vector2(577, 322.00003)
 scale = Vector2(1.1145631, 1.170909)
 texture = ExtResource("1_26blo")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 570.0
+offset_right = 710.0
+offset_bottom = 601.0
+text = "Press to start"
+script = ExtResource("2_f344s")
 
 [node name="Square" type="CharacterBody2D" parent="."]
 visible = false
@@ -43,9 +52,10 @@ texture = ExtResource("4_xregy")
 shape = SubResource("CircleShape2D_wkp8b")
 
 [node name="Triangle" type="CharacterBody2D" parent="."]
-position = Vector2(181, 493)
+position = Vector2(178, 492)
 collision_layer = 2
 script = ExtResource("5_jcs32")
+is_final = true
 metadata/_edit_group_ = true
 
 [node name="Icon" type="Sprite2D" parent="Triangle"]
@@ -54,3 +64,5 @@ texture = ExtResource("6_j12vc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Triangle"]
 polygon = PackedVector2Array(1, -34, -34, 26, 38, 27)
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
