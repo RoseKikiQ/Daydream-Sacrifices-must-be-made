@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Sacrifices must be made"
-run/main_scene="uid://ca6vqw6dvlox6"
+run/main_scene="uid://cb2f7lwp0c1jx"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

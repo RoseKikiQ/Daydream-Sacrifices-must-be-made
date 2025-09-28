@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://rqdv0sqhxpfm"]
+
+[ext_resource type="Texture2D" uid="uid://b1l1uo6shj2m7" path="res://Collecting berries baseplate.png" id="1_bf6rn"]
+[ext_resource type="Texture2D" uid="uid://dkskk10gfwwb2" path="res://Square.png" id="2_qmr0j"]
+[ext_resource type="Script" uid="uid://cfl40oom7c43f" path="res://triangle.gd" id="3_x2odi"]
+[ext_resource type="Texture2D" uid="uid://dja6woqedumne" path="res://无标题.png" id="4_8at3q"]
+
+[node name="Node" type="Node"]
+
+[node name="CollectingBerriesBaseplate" type="Sprite2D" parent="."]
+position = Vector2(575, 324)
+scale = Vector2(1.1145631, 1.170909)
+texture = ExtResource("1_bf6rn")
+
+[node name="Square" type="CharacterBody2D" parent="."]
+visible = false
+position = Vector2(195, 210)
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="Square"]
+visible = false
+scale = Vector2(0.58445925, 0.60570467)
+texture = ExtResource("2_qmr0j")
+
+[node name="Triangle" type="CharacterBody2D" parent="."]
+position = Vector2(181, 493)
+collision_layer = 2
+script = ExtResource("3_x2odi")
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="Triangle"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_8at3q")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Triangle"]
+polygon = PackedVector2Array(1, -34, -34, 26, 38, 27)

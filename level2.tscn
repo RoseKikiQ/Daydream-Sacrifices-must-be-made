@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c1wk66qn105xf"]
+[gd_scene load_steps=16 format=3 uid="uid://c1wk66qn105xf"]
 
 [ext_resource type="Texture2D" uid="uid://cbtcl2kqc70q7" path="res://Base.png" id="1_qulpo"]
 [ext_resource type="Texture2D" uid="uid://dkskk10gfwwb2" path="res://Square.png" id="2_jifot"]
@@ -14,9 +14,6 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3opl0"]
 radius = 37.215588
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_03owx"]
-size = Vector2(76, 66)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wkp8b"]
 radius = 15.0
@@ -69,9 +66,8 @@ metadata/_edit_group_ = true
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("5_s8oj7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Triangle"]
-position = Vector2(1, -5)
-shape = SubResource("RectangleShape2D_03owx")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Triangle"]
+polygon = PackedVector2Array(3, -36, -34, 27, 38, 27)
 
 [node name="trianglekey" type="Area2D" parent="."]
 position = Vector2(919, 268)
@@ -98,13 +94,14 @@ light_mask = 2
 visibility_layer = 2
 position = Vector2(1, 0)
 disable_mode = 1
-collision_mask = 0
+collision_layer = 3
+collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_3opl0")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(624, 294)
+position = Vector2(626, 292)
 build_mode = 1
-polygon = PackedVector2Array(-613.6726, -288.10233, -33.672607, -284.10233, -34.672607, 96.897675, -27.672607, 95.897675, -30.672607, -284.10233, 522.3274, -283.10233, 525.3274, 34.897675, 266.3274, 33.897675, 264.3274, -175.10233, 257.3274, -174.10233, 259.3274, 35.897675, 525.3274, 41.897675, 523.3274, 346.89767, 265.3274, 346.89767, 266.3274, 144.89767, 259.3274, 144.89767, 259.3274, 344.89767, -619.6726, 348.89767, -618.6726, 205.89767, 115.32739, 206.89767, 118.32739, -180.10233, 109.32739, -179.10233, 110.32739, 200.89767, -413.6726, 201.89767, -413.6726, 16.897675, -193.6726, 13.897675, -193.6726, 7.8976746, -420.6726, 9.897675, -418.6726, 200.89767, -616.6726, 201.89767, -613.6726, -137.10233, -215.6726, -136.10233, -216.6726, -144.10233, -613.6726, -144.10233)
+polygon = PackedVector2Array(-615, -284, -36, -281, -37, 98, -31, 98, -30, -281, 515, -281, 516, 35, 265, 35, 265, -174, 258, -173, 258, 40, 516, 41, 515, 349, 265, 349, 265, 143, 260, 143, 259, 349, -616, 348, -617, 209, 115, 210, 114, -180, 108, -180, 108, 203, -415, 204, -417, 16, -196, 18, -196, 12, -422, 11, -420, 204, -616, 204, -615, -138, -218, -137, -218, -142, -616, -141)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(12.999992, 545)

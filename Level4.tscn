@@ -1,0 +1,139 @@
+[gd_scene load_steps=17 format=3 uid="uid://bq784fef2710"]
+
+[ext_resource type="Script" uid="uid://bqtmnbn5a6j3v" path="res://level_4.gd" id="1_1ug64"]
+[ext_resource type="Texture2D" uid="uid://cbtcl2kqc70q7" path="res://Base.png" id="1_nj7ao"]
+[ext_resource type="Texture2D" uid="uid://dkskk10gfwwb2" path="res://Square.png" id="2_1ug64"]
+[ext_resource type="Script" uid="uid://ciequ7bsx0cdv" path="res://circle.gd" id="3_yg50l"]
+[ext_resource type="Texture2D" uid="uid://dmmci8sqbl8gy" path="res://Circle.png" id="4_cbmc8"]
+[ext_resource type="Script" uid="uid://cfl40oom7c43f" path="res://triangle.gd" id="5_872hp"]
+[ext_resource type="Texture2D" uid="uid://dja6woqedumne" path="res://无标题.png" id="6_apgry"]
+[ext_resource type="Script" uid="uid://ce5me2kksb6ph" path="res://door.gd" id="7_m0rsl"]
+[ext_resource type="Texture2D" uid="uid://dynmw7w08dejk" path="res://A door.png" id="8_vtyjd"]
+[ext_resource type="Texture2D" uid="uid://djavex2eqvek1" path="res://Circle slot.png" id="9_yqqjl"]
+[ext_resource type="Script" uid="uid://bligfdhqbit60" path="res://circle_slot.gd" id="11_1ug64"]
+[ext_resource type="Texture2D" uid="uid://b5jivrlvkqh76" path="res://Knife.png" id="11_nj7ao"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gkwbp"]
+radius = 37.107952
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ug64"]
+size = Vector2(1058.6367, 431.80234)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ug64"]
+radius = 89.90454
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yg50l"]
+size = Vector2(115, 22)
+
+[node name="Node" type="Node"]
+script = ExtResource("1_1ug64")
+
+[node name="Base" type="Sprite2D" parent="."]
+position = Vector2(576, 322.00003)
+scale = Vector2(1.1797034, 1.2104521)
+texture = ExtResource("1_nj7ao")
+
+[node name="Square" type="CharacterBody2D" parent="."]
+visible = false
+position = Vector2(195, 210)
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="Square"]
+visible = false
+scale = Vector2(0.58445925, 0.60570467)
+texture = ExtResource("2_1ug64")
+
+[node name="Circle" type="CharacterBody2D" parent="."]
+position = Vector2(182, 323)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("3_yg50l")
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="Circle"]
+position = Vector2(1, -3.8146973e-06)
+scale = Vector2(0.7146018, 0.7698019)
+texture = ExtResource("4_cbmc8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circle"]
+shape = SubResource("CircleShape2D_gkwbp")
+
+[node name="Area2D" type="Area2D" parent="Circle"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circle/Area2D"]
+shape = SubResource("CircleShape2D_gkwbp")
+
+[node name="Triangle" type="CharacterBody2D" parent="."]
+position = Vector2(275, 327)
+collision_layer = 2
+script = ExtResource("5_872hp")
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="Triangle"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_apgry")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Triangle"]
+polygon = PackedVector2Array(1, -34, -34, 26, 38, 27)
+
+[node name="Area2D" type="Area2D" parent="Triangle"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Triangle/Area2D"]
+position = Vector2(-0.39753723, 0.6956978)
+scale = Vector2(1.1987705, 1.1987704)
+polygon = PackedVector2Array(1, -34, -34, 26, 38, 27)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1127, 288)
+scale = Vector2(0.014169097, 0.29874775)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_m0rsl")
+metadata/_edit_group_ = true
+
+[node name="ADoor" type="Sprite2D" parent="Area2D"]
+position = Vector2(423.45654, 68.619736)
+scale = Vector2(1, 0.7724551)
+texture = ExtResource("8_vtyjd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(141.14844, 68.61981)
+shape = SubResource("RectangleShape2D_1ug64")
+
+[node name="Circleslot" type="Area2D" parent="."]
+position = Vector2(1021, 482.00003)
+scale = Vector2(0.4226705, 0.43828267)
+metadata/_edit_group_ = true
+
+[node name="CircleSlot" type="Sprite2D" parent="Circleslot"]
+position = Vector2(4.731818, 0)
+scale = Vector2(1, 1.0000001)
+texture = ExtResource("9_yqqjl")
+script = ExtResource("11_1ug64")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circleslot"]
+position = Vector2(-2.365909, -11.408163)
+shape = SubResource("CircleShape2D_1ug64")
+
+[node name="Knife" type="Area2D" parent="."]
+position = Vector2(998, 164)
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="Knife"]
+position = Vector2(0, 4.7683716e-07)
+scale = Vector2(0.09766275, 0.112299465)
+texture = ExtResource("11_nj7ao")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Knife"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_yg50l")
+
+[connection signal="area_entered" from="Triangle/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Knife" to="." method="_on_knife_body_entered"]

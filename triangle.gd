@@ -4,6 +4,7 @@ const b = 50
 var Key_collected = false
 var Has_Key = false
 var Not_has_key = true
+var Body_collected = false
 func _physics_process(delta: float) -> void:
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	velocity = input_dir * 500

@@ -10,19 +10,17 @@
 [ext_resource type="Texture2D" uid="uid://um74kfdm76pw" path="res://Triangle Key.png" id="7_gp5y5"]
 [ext_resource type="Script" uid="uid://ce5me2kksb6ph" path="res://door.gd" id="8_kah4x"]
 [ext_resource type="Texture2D" uid="uid://dynmw7w08dejk" path="res://A door.png" id="9_8jspn"]
+[ext_resource type="Texture2D" uid="uid://brwr5oeyostgo" path="res://Maze number 2.png" id="11_ewulq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wkp8b"]
 radius = 37.107952
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_03owx"]
-size = Vector2(76, 66)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkp8b"]
+size = Vector2(6916.461, 56.904243)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wkp8b"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7swbh"]
 radius = 15.0
 height = 72.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkp8b"]
-size = Vector2(1310.625, 434.28363)
 
 [node name="Node" type="Node"]
 
@@ -42,7 +40,9 @@ scale = Vector2(0.58445925, 0.60570467)
 texture = ExtResource("2_7swbh")
 
 [node name="Circle" type="CharacterBody2D" parent="."]
-position = Vector2(194, 302)
+position = Vector2(292, 390)
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("3_7swbh")
 metadata/_edit_group_ = true
 
@@ -52,11 +52,11 @@ scale = Vector2(0.7146018, 0.7698019)
 texture = ExtResource("3_ewulq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Circle"]
-visible = false
 shape = SubResource("CircleShape2D_wkp8b")
 
 [node name="Triangle" type="CharacterBody2D" parent="."]
-position = Vector2(304, 255)
+position = Vector2(194, 391)
+collision_layer = 2
 script = ExtResource("4_6vscs")
 metadata/_edit_group_ = true
 
@@ -64,35 +64,52 @@ metadata/_edit_group_ = true
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("5_otr1s")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Triangle"]
-position = Vector2(-1.5, -2)
-shape = SubResource("RectangleShape2D_03owx")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Triangle"]
+scale = Vector2(0.75, 0.75)
+polygon = PackedVector2Array(1.3333435, -41.333313, -42.666656, 32, 48, 33.333344)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(267, 312)
+scale = Vector2(0.014169097, 0.29874775)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("8_kah4x")
+level = 2
+metadata/_edit_group_ = true
+
+[node name="ADoor" type="Sprite2D" parent="Area2D"]
+position = Vector2(1764.4037, 1.5258789e-05)
+scale = Vector2(6.656766, 0.13173646)
+texture = ExtResource("9_8jspn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1764.4023, -21.757446)
+shape = SubResource("RectangleShape2D_wkp8b")
 
 [node name="trianglekey" type="Area2D" parent="."]
-position = Vector2(635, 279)
+position = Vector2(825, 302)
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("6_bptnd")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trianglekey"]
-position = Vector2(2, 1)
-shape = SubResource("CapsuleShape2D_wkp8b")
+shape = SubResource("CapsuleShape2D_7swbh")
 
 [node name="TriangleKey" type="Sprite2D" parent="trianglekey"]
 texture = ExtResource("7_gp5y5")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(500, 37)
-scale = Vector2(0.014169097, 0.29874775)
-script = ExtResource("8_kah4x")
-metadata/_edit_group_ = true
+[node name="MazeNumber2" type="Sprite2D" parent="."]
+position = Vector2(575, 322.50003)
+scale = Vector2(1.1106796, 1.1509092)
+texture = ExtResource("11_ewulq")
 
-[node name="ADoor" type="Sprite2D" parent="Area2D"]
-position = Vector2(44815.844, 933.89825)
-texture = ExtResource("9_8jspn")
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(44533.54, 932.2247)
-shape = SubResource("RectangleShape2D_wkp8b")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+build_mode = 1
+polygon = PackedVector2Array(5, 9, 1140, 9, 1141, 122, 744, 121, 745, 492, 751, 492, 750, 378, 886, 377, 886, 553, 1041, 553, 1041, 546, 892, 547, 891, 377, 924, 378, 924, 255, 1040, 256, 1040, 250, 924, 250, 924, 198, 918, 198, 918, 372, 751, 372, 750, 127, 1141, 127, 1140, 370, 1023, 370, 1023, 376, 1140, 375, 1140, 635, 6, 634, 7, 531, 503, 531, 503, 525, 346, 525, 347, 272, 497, 272, 497, 266, 346, 266, 347, 229, 341, 229, 341, 321, 243, 321, 243, 129, 610, 129, 610, 381, 447, 381, 447, 387, 611, 387, 610, 487, 617, 487, 616, 123, 237, 123, 237, 321, 120, 321, 120, 443, 127, 443, 127, 327, 340, 327, 341, 525, 7, 525)
 
-[connection signal="body_entered" from="trianglekey" to="trianglekey" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="trianglekey" to="trianglekey" method="_on_body_entered"]
