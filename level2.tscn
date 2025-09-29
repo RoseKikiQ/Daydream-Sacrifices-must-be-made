@@ -88,11 +88,6 @@ shape = SubResource("CapsuleShape2D_wkp8b")
 [node name="TriangleKey" type="Sprite2D" parent="trianglekey"]
 texture = ExtResource("7_r8rrl")
 
-[node name="SmallMaze1" type="Sprite2D" parent="."]
-position = Vector2(579, 325.00003)
-scale = Vector2(1.1080039, 1.1523298)
-texture = ExtResource("11_3opl0")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 show_behind_parent = true
 top_level = true
@@ -126,6 +121,11 @@ texture = ExtResource("9_4ou0f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(776.33746, 85.572876)
 shape = SubResource("RectangleShape2D_3opl0")
+
+[node name="SmallMaze1" type="Sprite2D" parent="."]
+position = Vector2(578, 329)
+scale = Vector2(1.1031822, 1.1487455)
+texture = ExtResource("11_3opl0")
 
 [connection signal="body_entered" from="trianglekey" to="trianglekey" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

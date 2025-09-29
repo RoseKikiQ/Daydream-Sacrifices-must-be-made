@@ -99,17 +99,16 @@ shape = SubResource("CapsuleShape2D_7swbh")
 [node name="TriangleKey" type="Sprite2D" parent="trianglekey"]
 texture = ExtResource("7_gp5y5")
 
-[node name="MazeNumber2" type="Sprite2D" parent="."]
-position = Vector2(575, 322.50003)
-scale = Vector2(1.1106796, 1.1509092)
-texture = ExtResource("11_ewulq")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
 build_mode = 1
 polygon = PackedVector2Array(5, 9, 1140, 9, 1141, 122, 744, 121, 745, 492, 751, 492, 750, 378, 886, 377, 886, 553, 1041, 553, 1041, 546, 892, 547, 891, 377, 924, 378, 924, 255, 1040, 256, 1040, 250, 924, 250, 924, 198, 918, 198, 918, 372, 751, 372, 750, 127, 1141, 127, 1140, 370, 1023, 370, 1023, 376, 1140, 375, 1140, 635, 6, 634, 7, 531, 503, 531, 503, 525, 346, 525, 347, 272, 497, 272, 497, 266, 346, 266, 347, 229, 341, 229, 341, 321, 243, 321, 243, 129, 610, 129, 610, 381, 447, 381, 447, 387, 611, 387, 610, 487, 617, 487, 616, 123, 237, 123, 237, 321, 120, 321, 120, 443, 127, 443, 127, 327, 340, 327, 341, 525, 7, 525)
+
+[node name="MazeNumber2" type="Sprite2D" parent="."]
+position = Vector2(576.00006, 321)
+scale = Vector2(1.1145631, 1.1718181)
+texture = ExtResource("11_ewulq")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="trianglekey" to="trianglekey" method="_on_body_entered"]

@@ -23,7 +23,7 @@ offset_left = 448.0
 offset_top = 570.0
 offset_right = 710.0
 offset_bottom = 601.0
-text = "Press to start"
+text = "Press To Start The Maze"
 script = ExtResource("2_f344s")
 
 [node name="Square" type="CharacterBody2D" parent="."]
